@@ -33,23 +33,23 @@ An unofficial port of the [Flow Icons](https://marketplace.visualstudio.com/item
 Clone this repository to a permanent location on your machine. The extension must remain in place after installation, so don't clone it somewhere temporary.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/flow-icons-zed.git ~/Desktop/flow-icons-zed
+git clone https://github.com/RashikTheDev/flow-icons-zed.git ~/Desktop/flow-icons-zed
 ```
 
 ### Step 2 — Locate your Flow Icons VS Code extension
 
-Navigate to your VS Code extensions folder and find the Flow Icons directory. The folder is almost always named `thang-nm.flow-icons-1.3.1`.
+Navigate to your VS Code extensions folder and find the Flow Icons directory. The folder is almost always named `thang-nm.flow-icons-1.3.2`.
 
 | Platform | Path |
 |---|---|
-| **macOS / Linux** | `~/.vscode/extensions/thang-nm.flow-icons-1.3.1` |
-| **Windows** | `%USERPROFILE%\.vscode\extensions\thang-nm.flow-icons-1.3.1` |
+| **macOS / Linux** | `~/.vscode/extensions/thang-nm.flow-icons-1.3.2` |
+| **Windows** | `%USERPROFILE%\.vscode\extensions\thang-nm.flow-icons-1.3.2` |
 
 > On Windows, you can open File Explorer and paste the path directly into the address bar.
 
 ### Step 3 — Copy the icon folders
 
-Inside `thang-nm.flow-icons-1.3.1`, you will find 6 folders:
+Inside `thang-nm.flow-icons-1.3.2`, you will find 6 folders:
 
 ```
 dawn/
