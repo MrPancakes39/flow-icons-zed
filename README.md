@@ -16,13 +16,15 @@ An unofficial port of the [Flow Icons](https://marketplace.visualstudio.com/item
 | Flow Deep Light | Light |
 | Flow Dim | Dark |
 | Flow Dim Light | Light |
+| Flow You | Dark |
+| Flow You Light | Light |
 
 ---
 
 ## Prerequisites
 
 - [Zed IDE](https://zed.dev) installed
-- [Flow Icons for VS Code](https://marketplace.visualstudio.com/items?itemName=thang-nm.flow-icons) purchased and installed in VS Code
+- [Flow Icons for VS Code](https://marketplace.visualstudio.com/items?itemName=thang-nm.flow-icons) purchased and installed in VS Code or Cursor
 
 ---
 
@@ -38,18 +40,20 @@ git clone https://github.com/RashikTheDev/flow-icons-zed.git ~/Desktop/flow-icon
 
 ### Step 2 — Locate your Flow Icons VS Code extension
 
-Navigate to your VS Code extensions folder and find the Flow Icons directory. The folder is almost always named `thang-nm.flow-icons-1.3.2`.
+Navigate to your VS Code or Cursor extensions folder and find the Flow Icons directory. The folder is usually named `thang-nm.flow-icons-2.0.3` (Cursor installs it as `thang-nm.flow-icons-2.0.3-universal`).
 
 | Platform | Path |
 |---|---|
-| **macOS / Linux** | `~/.vscode/extensions/thang-nm.flow-icons-1.3.2` |
-| **Windows** | `%USERPROFILE%\.vscode\extensions\thang-nm.flow-icons-1.3.2` |
+| **macOS / Linux (VS Code)** | `~/.vscode/extensions/thang-nm.flow-icons-2.0.3` |
+| **macOS / Linux (Cursor)** | `~/.cursor/extensions/thang-nm.flow-icons-2.0.3-universal` |
+| **Windows (VS Code)** | `%USERPROFILE%\.vscode\extensions\thang-nm.flow-icons-2.0.3` |
+| **Windows (Cursor)** | `%USERPROFILE%\.cursor\extensions\thang-nm.flow-icons-2.0.3-universal` |
 
 > On Windows, you can open File Explorer and paste the path directly into the address bar.
 
 ### Step 3 — Copy the icon folders
 
-Inside `thang-nm.flow-icons-1.3.2`, you will find 6 folders:
+Inside the Flow Icons extension directory, you will find 8 folders:
 
 ```
 dawn/
@@ -58,13 +62,15 @@ deep/
 deep-light/
 dim/
 dim-light/
+you/
+you-light/
 ```
 
-Copy all 6 of these folders.
+Copy all 8 of these folders.
 
 ### Step 4 — Paste into the cloned repository
 
-Navigate to the cloned repository folder and open the `icons/` directory. Paste the 6 folders there. Your structure should look like this:
+Navigate to the cloned repository folder and open the `icons/` directory. Paste the 8 folders there. Your structure should look like this:
 
 ```
 flow-icons-zed/
@@ -74,7 +80,9 @@ flow-icons-zed/
     ├── deep/
     ├── deep-light/
     ├── dim/
-    └── dim-light/
+    ├── dim-light/
+    ├── you/
+    └── you-light/
 ```
 
 ### Step 5 — Install as a Dev Extension in Zed
@@ -88,10 +96,22 @@ flow-icons-zed/
 ### Step 6 — Select your theme
 
 1. Open the Command Palette again
-2. Type and select **`icon theme selector: toggle`** 
+2. Type and select **`icon theme selector: toggle`**
 3. Choose any of the **Flow** icon themes from the list
 
 That's it — you're all set.
+
+---
+
+## Regenerating mappings
+
+When a new version of Flow Icons is released, you can regenerate the Zed icon theme mappings from the VS Code extension source:
+
+```bash
+node scripts/generate-icon-theme.mjs <path-to-vscode-ext>
+```
+
+If no path is provided, the script auto-detects the latest `thang-nm.flow-icons-*` extension in `~/.cursor/extensions` or `~/.vscode/extensions`.
 
 ---
 
