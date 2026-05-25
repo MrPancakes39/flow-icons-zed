@@ -18,8 +18,8 @@ function findExtensionPath(argPath) {
   }
 
   const searchDirs = [
-    join(homedir(), ".cursor", "extensions"),
     join(homedir(), ".vscode", "extensions"),
+    join(homedir(), ".cursor", "extensions"),
   ];
 
   for (const dir of searchDirs) {
@@ -32,7 +32,7 @@ function findExtensionPath(argPath) {
   }
 
   throw new Error(
-    "Could not find Flow Icons VS Code extension. Pass the path as an argument.",
+    "Could not find Flow Icons extension in VS Code or Cursor. Pass the path as an argument.",
   );
 }
 
@@ -170,7 +170,7 @@ function main() {
   const outputPath =
     process.argv[3] ?? join(process.cwd(), "icon_themes", "flow-icons.json");
 
-  console.log(`Using VS Code extension: ${extPath}`);
+  console.log(`Using extension from VS Code or Cursor: ${extPath}`);
   const iconTheme = generateIconTheme(extPath);
   writeFileSync(outputPath, `${JSON.stringify(iconTheme, null, 2)}\n`);
   console.log(`Wrote ${iconTheme.themes.length} themes to ${outputPath}`);
